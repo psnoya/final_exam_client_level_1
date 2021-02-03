@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
-import getShows from '../modules/getShows'
-import { useSelector, useDispatch } from 'react-redux'
+import showsList from '../modules/getShows';
+import { useSelector} from 'react-redux';
 import { Card } from "semantic-ui-react";
 
 
 const DisplayShows = () => {
-  const dispatch = useDispatch()
-  const shows = useSelector((state) => state.showsDisplay)
+  const getShows = useSelector((state) => state.getShows)
 
   useEffect(() => {
-    getShows.index(dispatch)
+    showsList.index()
   }, [])
 
-  let showsDisplay = shows.map((shows) => {
+  let showsDisplay 
+  if (getShows) {
+  showsDisplay = getShows.map((shows) => {
     return (
       <Card.Group>
         {showsDisplay}
@@ -20,7 +21,6 @@ const DisplayShows = () => {
     )
   }
 }
-
 
 
 export default DisplayShows

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const getShows = {
   async index(dispatch) {
-    let result = await axios.get('https://content.viaplay.se/pc-se/serier/samtliga'
+    let response = await axios.get('https://content.viaplay.se/pc-se/serier/samtliga'
     )
 
     store.dispatch({
@@ -12,4 +12,4 @@ const getShows = {
     })
   }}
 
-export {getShows}
+export default getShows

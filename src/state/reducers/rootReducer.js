@@ -5,7 +5,7 @@ const rootReducer = ( state = InitialState, action) => {
     case 'SHOW_SHOWS_FEED':
       return {
         ...state,
-        showsDisplay: action.payload
+        showsDisplay: action.payload,
       }
 
       default:
