@@ -9,6 +9,13 @@ describe('User can view a list of shows', () => {
     cy.visit('/')
   })
   it('Successfully', () => {
-    
+    cy.get("[data-cy='shows-list']").withing(() => {
+      cy.get(">div").each((_, shows) => {
+        cy.get(`[data-cy="shows-list-${shows + 1}]`).withing(() => {
+          cy.get("[data-cy='title']").should("exist")
+          cy.get("[data-cy='description']").should("exist")
+        })
+      })
+    })
   })
 })
