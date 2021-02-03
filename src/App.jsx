@@ -1,10 +1,13 @@
 import React from 'react'
+import PageHeader from './components/PageHeader'
+import DisplayShows from './components/DisplayShows'
 
 const App = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+    <PageHeader />
+    <DisplayShows />
+    </>
   )
 }
 
